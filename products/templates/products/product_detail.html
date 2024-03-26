@@ -1,0 +1,10 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+{% block page_title %}جزئیات کالای {{ product.title }}{% endblock page_title %}
+{% block content %}
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.description }}</p>
+    <small>{{ product.price }}</small>
+    <small>{{ product.datetime_modified }}</small>
+
+{% endblock content %}
