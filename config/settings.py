@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'allauth',
     'allauth.account',
+    'rosetta'
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -138,13 +139,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
+
+LOCALE_PATHS = (BASE_DIR.joinpath('products/locale'), BASE_DIR.joinpath('locale'), BASE_DIR.joinpath('accounts/locale'))
+
+LANGUAGES = [('en', 'English'), ('fa', 'Persian'),]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -180,3 +186,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+# messaging configs:
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {messages.ERROR: 'danger', }

@@ -2,7 +2,8 @@ from django.views.generic import ListView, DetailView, CreateView
 from .models import Product, Comment
 from .forms import CommentForm
 from django.shortcuts import reverse, get_object_or_404, redirect, render
-from django.views.generic.edit import FormMixin
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 
 class ProductListView(ListView):
@@ -62,4 +63,5 @@ class CommentCreateView(CreateView):
         new_comment = form.save(commit=False)
         new_comment.author = self.request.user
         new_comment.product = product
+        messages.success(self.request, _('Your comment was successfully submitted'))
         return super().form_valid(form)
