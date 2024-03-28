@@ -4,6 +4,7 @@ from .forms import CommentForm
 from django.shortcuts import reverse, get_object_or_404, redirect, render
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from cart.forms import AddProductToCartForm
 
 
 class ProductListView(ListView):
@@ -39,6 +40,7 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = CommentForm()
+        context['add_to_cart_form'] = AddProductToCartForm()
         return context
 
     # def post(self, request, *args, **kwargs):

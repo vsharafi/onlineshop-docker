@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-27 17:41+0330\n"
+"POT-Creation-Date: 2024-03-28 16:59+0330\n"
 "PO-Revision-Date: 2024-03-27 17:42+0330\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,38 +59,38 @@ msgstr "تومان"
 msgid "Add to Cart"
 msgstr "افزودن به سبد خرید"
 
-#: .\templates\products\product_detail.html:48
+#: .\templates\products\product_detail.html:52
 msgid "Categories:"
 msgstr "دسته بندی ها"
 
-#: .\templates\products\product_detail.html:63
+#: .\templates\products\product_detail.html:67
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
-#: .\templates\products\product_detail.html:91
+#: .\templates\products\product_detail.html:95
 msgid "Black"
 msgstr "مشکی"
 
-#: .\templates\products\product_detail.html:92
+#: .\templates\products\product_detail.html:96
 msgid "Green"
 msgstr "سبز"
 
-#: .\templates\products\product_detail.html:93
+#: .\templates\products\product_detail.html:97
 msgid "Red"
 msgstr "قرمز"
 
-#: .\templates\products\product_detail.html:94
+#: .\templates\products\product_detail.html:98
 msgid "Orange"
 msgstr "نارنجی"
 
-#: .\templates\products\product_detail.html:136
+#: .\templates\products\product_detail.html:140
 msgid "Write your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:141
+#: .\templates\products\product_detail.html:145
 msgid "Submit"
 msgstr "ارسال"
 
-#: .\views.py:66
+#: .\views.py:68
 msgid "Your comment was successfully submitted"
 msgstr "دیدگاه شما با موفقیت ثبت شد"
