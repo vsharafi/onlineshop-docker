@@ -3,6 +3,8 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 {% load comment_tags %}
+{% load persian_translation_tags %}
+{% load humanize %}
 {% block page_title %}سبد خرید{% endblock page_title %}
 {% block content %}
     <!-- Breadcrumb area Start -->
@@ -48,7 +50,7 @@
                                                 </td>
                                                 <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.product_obj.price }}</span>
+                                                                <span class="money">{{ item.product_obj.price|intcomma:False|trans_number }} {% trans '$' %}</span>
                                                             </span>
                                                 </td>
                                                 <td class="product-quantity">
@@ -66,7 +68,7 @@
                                                 </td>
                                                 <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.total_price }}</span>
+                                                                <span class="money">{{ item.total_price|intcomma:False|trans_number }} {% trans '$' %}</span>
                                                             </span>
                                                 </td>
                                             </tr>
@@ -105,7 +107,7 @@
                                         </div>
                                         <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">{{ cart.get_total_price }}</span>
+                                                    <span class="money">{{ cart.get_total_price|intcomma:False|trans_number }} {% trans '$' %}</span>
                                                 </span>
                                         </div>
                                     </div>

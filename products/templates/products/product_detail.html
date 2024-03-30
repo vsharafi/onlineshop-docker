@@ -1,8 +1,12 @@
 {% extends "_base.html" %}
 {% load static %}
+{% load comment_tags %}
+{% load persian_translation_tags %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-{% load comment_tags %}
+{% load jalali_tags %}
+{% load humanize %}
+
 {% block page_title %}جزئیات کالای {{ product.title }}{% endblock page_title %}
 {% block content %}
     {% include 'breadcrump.html' with header_name=product.title %}
@@ -29,7 +33,7 @@
                             <h3 class="product-title mb--20">{{ product.title }}</h3>
                             <p class="product-short-description mb--20">{{ product.description }}</p>
                             <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money text-success">{{ product.price }} {% trans '$' %}</span>
+                                <span class="money text-success">{{ product.price|intcomma:False|trans_number }} {% trans '$' %}</span>
                                 <span class="price-separator">-</span>
                                 <span class="money old-price text-danger">۲۱۰,۰۰۰ تومان</span>
                             </div>
@@ -130,8 +134,6 @@
                                                                      alt="Review Avatar" class="review__avatar">
                                                                 <div>
                                                                     <div class="review__meta">
-                                                                        <span class="review__published-date">{{ comment.datetime_created }}</span>
-                                                                        <span class="review__dash">-</span>
                                                                         <strong class="review__author px-4">{{ comment.author }}</strong>
                                                                     </div>
                                                                     <div class="product-rating">
@@ -147,6 +149,8 @@
                                                             </p>
                                                         </div>
                                                     </div>
+                                                    <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</span>
+
                                                 </li>
                                             {% endfor %}
                                         </ul>

@@ -43,18 +43,22 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # my apps
-    'accounts',
-    'pages',
-    'products.apps.ProductsConfig',
-    'cart.apps.CartConfig',
+    'django.contrib.humanize',
 
     # third party apps
     "crispy_forms",
     "crispy_bootstrap5",
     'allauth',
     'allauth.account',
-    'rosetta'
+    'rosetta',
+    'jalali_date',
+
+    # my apps
+    'accounts',
+    'pages',
+    'products.apps.ProductsConfig',
+    'cart.apps.CartConfig',
+    'persian_translate',
 ]
 
 AUTHENTICATION_BACKENDS = [
