@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 from environs import Env
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rosetta',
     'jalali_date',
+    'ckeditor',
 
     # my apps
     'accounts',
@@ -168,6 +169,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     str(BASE_DIR.joinpath("static"))
 ]
+STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
