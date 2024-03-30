@@ -9,6 +9,7 @@ from ckeditor.fields import RichTextField
 class Product(models.Model):
     title = models.CharField(max_length=100)
     description = RichTextField()
+    short_description = models.TextField(blank=True)
     datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
     price = models.PositiveIntegerField(default=0)
