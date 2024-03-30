@@ -93,6 +93,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # `allauth` needs this from django
                 'django.template.context_processors.request',
+                # Custom context processors
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -149,7 +151,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-LOCALE_PATHS = (BASE_DIR.joinpath('products/locale'), BASE_DIR.joinpath('locale'), BASE_DIR.joinpath('accounts/locale'))
+LOCALE_PATHS = (BASE_DIR.joinpath('products/locale'), BASE_DIR.joinpath('templates/locale'), BASE_DIR.joinpath('accounts/locale'))
 
 LANGUAGES = [('en', 'English'), ('fa', 'Persian'),]
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 16:59+0330\n"
-"PO-Revision-Date: 2024-03-27 17:42+0330\n"
+"POT-Creation-Date: 2024-03-29 16:00+0330\n"
+"PO-Revision-Date: 2024-03-29 16:04+0330\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -51,46 +51,60 @@ msgstr "امتیاز محصول"
 msgid "Product details of"
 msgstr "جزئیات محصول"
 
-#: .\templates\products\product_detail.html:35
+#: .\templates\products\product_detail.html:37
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\products\product_detail.html:45
+#: .\templates\products\product_detail.html:53
+#: .\templates\products\product_detail.html:55
+#: .\templates\products\product_list.html:81
 msgid "Add to Cart"
 msgstr "افزودن به سبد خرید"
 
-#: .\templates\products\product_detail.html:52
+#: .\templates\products\product_detail.html:67
 msgid "Categories:"
 msgstr "دسته بندی ها"
 
-#: .\templates\products\product_detail.html:67
+#: .\templates\products\product_detail.html:83
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
-#: .\templates\products\product_detail.html:95
+#: .\templates\products\product_detail.html:115
 msgid "Black"
 msgstr "مشکی"
 
-#: .\templates\products\product_detail.html:96
+#: .\templates\products\product_detail.html:116
 msgid "Green"
 msgstr "سبز"
 
-#: .\templates\products\product_detail.html:97
+#: .\templates\products\product_detail.html:117
 msgid "Red"
 msgstr "قرمز"
 
-#: .\templates\products\product_detail.html:98
+#: .\templates\products\product_detail.html:118
 msgid "Orange"
 msgstr "نارنجی"
 
-#: .\templates\products\product_detail.html:140
+#: .\templates\products\product_detail.html:164
 msgid "Write your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:145
+#: .\templates\products\product_detail.html:171
 msgid "Submit"
 msgstr "ارسال"
 
-#: .\views.py:68
+#: .\templates\products\product_detail.html:175
+msgid "login"
+msgstr "وارد شوید"
+
+#: .\templates\products\product_detail.html:176
+#| msgid "Write your comment"
+msgid " if you want to write your comment."
+msgstr " اگر میخواهید نظر خود را بنویسد"
+
+#: .\views.py:67
 msgid "Your comment was successfully submitted"
 msgstr "دیدگاه شما با موفقیت ثبت شد"
+
+#~ msgid "Add to cart"
+#~ msgstr "افزودن به سبد خرید"

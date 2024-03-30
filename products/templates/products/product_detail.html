@@ -5,19 +5,7 @@
 {% load comment_tags %}
 {% block page_title %}جزئیات کالای {{ product.title }}{% endblock page_title %}
 {% block content %}
-    <!-- Breadcrumb area Start -->
-    <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                        <h1 class="page-title">{% trans 'Product details of' %} «{{ product.title }}»</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb area End -->
+{% include 'breadcrump.html' with header_name=product.title %}
 
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
@@ -42,15 +30,26 @@
                             <div class="product-action d-flex align-items-sm-center align-content-center mb--30">
                                 <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                                     {% csrf_token %}
-                                    {{ add_to_cart_form|crispy }}
-                                    <button class="btn btn-small btn-bg-red btn-color-white btn-hover-2" type="submit">{% translate 'Add to Cart' %}</button>
+                                    {#                                    {{ add_to_cart_form|crispy }}#}
+                                    <div class="quantity-wrapper d-flex justify-content-start">
+
+                                        <div class="quantity">
+                                            <input type="number" class="quantity-input" name="quantity" id="qty"
+                                                   value="1" max="30" min="1">
+                                        </div>
+                                        <button class="btn btn-small btn-bg-red btn-color-white btn-hover-2"
+                                                type="submit">{% translate 'Add to Cart' %}</button>
+                                        <button class="btn btn-small btn-bg-red btn-color-white btn-hover-2"
+                                                type="submit">{% translate 'Add to Cart' %}</button>
+                                    </div>
+
                                     {# <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2" onclick="window.location.href='cart.html'">{% translate 'Add to Cart' %}</button>#}
                                 </form>
-{#                                <div class="quantity-wrapper d-flex justify-content-start">#}
-{#                                    <div class="quantity">#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
+                                {#                                <div class="quantity-wrapper d-flex justify-content-start">#}
+                                {#                                    <div class="quantity">#}
+                                {##}
+                                {#                                    </div>#}
+                                {#                                </div>#}
                             </div>
                             <div class="product-footer-meta mt-5 pt-5">
                                 <p><span class="m-0">{% trans 'Categories:' %}</span>
@@ -152,12 +151,19 @@
                                                 <div class="col-lg-8 m-auto">
                                                     <span class="reply-title pull-right">{% translate 'Write your comment' %}</span>
                                                     <br>
-                                                    <form action="{% url 'comment_create' pk=product.pk %}"
-                                                          class="form text-right" method="POST">
-                                                        {% csrf_token %}
-                                                        {{ form|crispy }}
-                                                        <button type="submit">{% trans 'Submit' %}</button>
-                                                    </form>
+                                                    {% if user.is_authenticated %}
+                                                        <form action="{% url 'comment_create' pk=product.pk %}"
+                                                              class="form text-right" method="POST">
+                                                            {% csrf_token %}
+                                                            {{ form|crispy }}
+                                                            <button type="submit">{% trans 'Submit' %}</button>
+                                                        </form>
+                                                    {% else %}
+                                                        <p>
+                                                            <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
+                                                            {% trans ' if you want to write your comment.' %}
+                                                        </p>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
