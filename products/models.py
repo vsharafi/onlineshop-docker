@@ -11,6 +11,7 @@ class Product(models.Model):
     datetime_modified = models.DateTimeField(auto_now=True)
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
+    image = models.ImageField(upload_to='products/product_cover', blank=True, verbose_name=_('Product Image'))
 
     def __str__(self):
         return self.title
@@ -22,6 +23,7 @@ class Product(models.Model):
 class ActiveCommentManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(active=True)
+
 
 class Comment(models.Model):
     PRODUCT_STARS = [('1', _('Very bad')), ('2', _('Bad')), ('3', _('Normal')), ('4', _('Good')), ('5', _('Very good'))]

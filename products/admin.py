@@ -5,8 +5,8 @@ from .models import Product, Comment
 class CommentsInline(admin.TabularInline):
     model = Comment
     fields = ('text', 'author', 'active', 'stars', 'id')
-    extra = 5
-    max_num = 10
+    extra = 0
+    # max_num = 10
 
 
 @admin.register(Product)

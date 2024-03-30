@@ -193,3 +193,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # messaging configs:
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {messages.ERROR: 'danger', }
+
+# media configs:
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
