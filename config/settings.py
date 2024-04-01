@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'persian_translate',
+    'orders.apps.OrdersConfig',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -170,6 +171,7 @@ STATICFILES_DIRS = [
     str(BASE_DIR.joinpath("static"))
 ]
 STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
+STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -191,10 +193,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # all configs:
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = True
+# ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_UNIQUE_EMAIL = True
 
 # messaging configs:
 from django.contrib.messages import constants as messages
